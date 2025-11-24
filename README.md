@@ -10,7 +10,7 @@ This is one of the first open-source attempts to build a unified translator for:
 
 Built using **google/mt5-small**, the model uses a sequence-to-sequence architecture fine-tuned on parallel dialect → Hindi pairs.
 
----
+
 
 # 🚀 Features
 
@@ -28,7 +28,7 @@ Built using **google/mt5-small**, the model uses a sequence-to-sequence architec
 - HuggingFace model card included
 - Extensible for future dialects
 
----
+
 
 # 📁 Project Structure
 
@@ -80,7 +80,7 @@ himachali2hindi-multilingual-mt5/
 └── requirements.txt
 ```
 
----
+
 
 # ✨ Supported Dialects
 
@@ -93,7 +93,7 @@ himachali2hindi-multilingual-mt5/
 
 You can add more dialects (e.g., Sirmauri, Chambeali) simply by adding datapoints.
 
----
+
 
 # 📡 Input Prompt Format
 
@@ -115,7 +115,7 @@ Model Output:
 मैं खेत जा रहा हूँ
 ```
 
----
+
 
 # 🧾 Dataset Format
 
@@ -142,7 +142,7 @@ Convert CSV → JSONL:
 python -m src.dataset_preprocessing   --input data/raw/parallel.csv   --output data/processed/dataset_clean.jsonl
 ```
 
----
+
 
 # 🏋️ Train the Model
 
@@ -156,7 +156,7 @@ Outputs saved to:
 model/checkpoints/best-model/
 ```
 
----
+
 
 # 🧪 Evaluate
 
@@ -166,7 +166,7 @@ python -m src.evaluate
 
 Metrics: **ROUGE-1**, **ROUGE-L**, and optionally **BLEU** / **chrF**.
 
----
+
 
 # 🤖 Inference (Python)
 
@@ -177,7 +177,7 @@ out = translate("mai khet jaa reha", dialect="bilaspuri")
 print(out)  # Expected: मैं खेत जा रहा हूँ
 ```
 
----
+
 
 # 🌐 FastAPI Server
 
@@ -197,7 +197,7 @@ POST /translate
 }
 ```
 
----
+
 
 # 🎨 Gradio Demo
 
@@ -207,7 +207,7 @@ python app/ui.py
 
 UI lets users type dialect text + select dialect.
 
----
+
 
 # 📦 Installation
 
@@ -222,50 +222,3 @@ python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
-
----
-
-# 📝 HuggingFace Metadata (YAML)
-
-```yaml
----
-language:
-  - hi
-  - en
-tags:
-  - translation
-  - himachali
-  - bilaspuri
-  - mandeali
-  - kangri
-  - kulluvi
-license: apache-2.0
-pipeline_tag: translation
-model_name: himachali2hindi-multilingual-mt5
-base_model: google/mt5-small
-datasets:
-  - custom
----
-```
-
----
-
-# ⚖️ License
-
-This project uses the **Apache License 2.0**, which allows commercial use, modification, distribution, and private use.
-
----
-
-# 🙏 Acknowledgements
-
-- Himachali language speakers & communities  
-- open-source contributors  
-- Google mT5 team  
-- Developers preserving regional languages
-
----
-
-# ⚠️ Disclaimer
-
-This model is a research prototype. Translations may be imperfect — verify critical content with native speakers.
-
